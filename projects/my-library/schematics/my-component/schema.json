@@ -1,0 +1,42 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "myComponentSchematics",
+  "title": "MyComponent Schema",
+  "description": "Generate a file of JavaScript",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The name of the person",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "What name would you like?"
+    },
+    "addname": {
+      "type": "boolean",
+      "description": "add name",
+      "x-prompt": "Would you like to add name property?"
+    },
+    "fruits": {
+      "type": "string",
+      "description": "fruits",
+      "x-prompt": {
+        "message": "Choose one kind of fruits!",
+        "type": "list",
+        "items": [
+          { "value": "apple,peach", "label": "red fruit [apple...]" },
+          { "value": "banna,lemon", "label": "yellow fruit [banna...]" },
+          { "value": "orange", "label": "orange fruit [orange...]" },
+          { "value": "grape,eggplant", "label": "purple fruit [grape...]" }
+        ]
+      }
+    },
+    "project": {
+      "type": "string",
+      "description": "Generate in specific Angular CLI workspace project"
+    }
+  },
+  "required": ["name"]
+}

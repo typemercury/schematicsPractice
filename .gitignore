@@ -6,6 +6,11 @@
 /out-tsc
 # Only exists if Bazel was run
 /bazel-out
+# schematics
+**/schematics/**/*.js
+**/schematics/**/*.js.map
+**/schematics/**/*.d.ts
+!**/schematics/**/schema.d.ts
 
 # dependencies
 /node_modules
